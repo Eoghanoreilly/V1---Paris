@@ -13,8 +13,34 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var mapView: MKMapView!
-
     
+    var artworks: [Artwork] = []
+
+    func loadInitialData() {
+        // Here you are loading the PublicArt.json file into an DATA object
+        guard let fileName = Bundle.main.path(forResource: "PublicArt", ofType: "json")
+            else { return }
+        let optionalData = try? Data(contentsOf: URL(fileURLWithPath: fileName))
+        
+        guard
+        let data = optionalData,
+        
+        // Here you are using the JSonSerialization to obtain the JSON object
+        let json = try? JSONSerialization.jsonObject(with: data),
+        
+        // Here you are checking to make sure the JSON data format is a dictionary with 'String' keys and 'ANY' values
+        let dictionary = json as? [String: Any],
+        
+        // Here you tell the compiler you only care about data sets in the JSON file whos key is "DATA"
+        let works = dictionary["data"] as? [[Any]]
+            else { return }
+        
+        // Here you  flatmap this array of arrays, using the failable initializer that you just added to the Artwork class,
+        // and append the resulting validWorks to the artworks array. --------- NOT 1000% sure of the purpose
+        let validWorks = works.flatMap { Artwork(json: $0) }
+        artworks.append(contentsOf: validWorks)
+    
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +51,13 @@ class ViewController: UIViewController {
         centerMapOnLocation(location: initialLocation)
         
         mapView.delegate = self
-        let artwork = Artwork(title: "O'Reilly Residence", locationName: "Ballygawley, Co. Sligo", discipline: "House", coordinate: CLLocationCoordinate2D(latitude: 54.194479, longitude: -8.448119))
-        mapView.addAnnotation(artwork)
+        
+// The below hard codes a map point in the system. We don't want this (As it's not scalable or energy efficient) so we read from the JSON file instead
+// let artwork = Artwork(title: "O'Reilly Residence", locationName: "Ballygawley, Co. Sligo", discipline: "House", coordinate: CLLocationCoordinate2D(latitude: 54.194479, longitude: -8.448119))
+// mapView.addAnnotation(artwork)
+        
+        loadInitialData()
+        mapView.addAnnotations(artworks)
         }
 
     override func didReceiveMemoryWarning() {
