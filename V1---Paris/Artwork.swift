@@ -28,6 +28,7 @@ class Artwork: NSObject, MKAnnotation {
         super.init()
     }
     
+    
     init?(json: [Any]) {
         self.title = json[16] as? String ?? "No Title"
         self.locationName = json[12] as! String
