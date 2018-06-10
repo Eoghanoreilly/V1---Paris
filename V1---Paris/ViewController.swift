@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //set initial location in Honolulu
+        //set initial location
         let initialLocation = CLLocation(latitude: 54.194479, longitude: -8.448119)
         
         //this tells the app to zoom to the initial location when starting the app
@@ -77,14 +77,11 @@ class ViewController: UIViewController {
         //all this does is, when the app opens it'll zoom to your desired distance with a nice animation
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    
-    
-    
 
-
+    
 }
 
-
+// Map view delegate which handles the annotation view
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? Artwork else { return nil }
@@ -100,5 +97,9 @@ extension ViewController: MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
+    }
+    
+    @IBAction func done() {
+        navigationController?.popViewController(animated:true) // close view go back
     }
 }

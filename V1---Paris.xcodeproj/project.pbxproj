@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01D57EAD20CDD73F00DAA0BB /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D57EAC20CDD73F00DAA0BB /* MapDetailViewController.swift */; };
 		44919FA020CB209500621FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44919F9F20CB209500621FD8 /* AppDelegate.swift */; };
 		44919FA220CB209500621FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44919FA120CB209500621FD8 /* ViewController.swift */; };
 		44919FA520CB209500621FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44919FA320CB209500621FD8 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01D57EAC20CDD73F00DAA0BB /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
 		44919F9C20CB209500621FD8 /* V1---Paris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V1---Paris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44919F9F20CB209500621FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44919FA120CB209500621FD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				44919FA820CB209600621FD8 /* LaunchScreen.storyboard */,
 				44F77EBA20CC595000D471F9 /* PublicArt.json */,
 				44919FAB20CB209600621FD8 /* Info.plist */,
+				01D57EAC20CDD73F00DAA0BB /* MapDetailViewController.swift */,
 			);
 			path = "V1---Paris";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D57EAD20CDD73F00DAA0BB /* MapDetailViewController.swift in Sources */,
 				44919FA220CB209500621FD8 /* ViewController.swift in Sources */,
 				44F77EB720CB33C900D471F9 /* Artwork.swift in Sources */,
 				44919FA020CB209500621FD8 /* AppDelegate.swift in Sources */,
