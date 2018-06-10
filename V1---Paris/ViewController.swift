@@ -6,7 +6,7 @@
 //  Copyright © 2018 Vestego. All rights reserved.
 // Kris comment test - Jun 10, 11:49 Dublin time
 // A second comment for good measure
-
+// Third comment 12:02 June 10 - KD
 import UIKit
 import MapKit
 
