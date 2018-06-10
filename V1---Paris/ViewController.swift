@@ -4,9 +4,8 @@
 //
 //  Created by Eoghan on 2018-06-08.
 //  Copyright © 2018 Vestego. All rights reserved.
-// Kris comment test - Jun 10, 11:49 Dublin time
-// A second comment for good measure
-// Third comment 12:02 June 10 - KD
+
+
 import UIKit
 import MapKit
 
@@ -40,7 +39,7 @@ class ViewController: UIViewController {
         // and append the resulting validWorks to the artworks array. --------- NOT 1000% sure of the purpose
         let validWorks = works.flatMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
-        print("Hello World")
+        
     
     }
     
