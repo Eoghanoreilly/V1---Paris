@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         // Here you  flatmap this array of arrays, using the failable initializer that you just added to the Artwork class,
         // and append the resulting validWorks to the artworks array. --------- NOT 1000% sure of the purpose
-        let validWorks = works.flatMap { Artwork(json: $0) }
+        let validWorks = works.compactMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
         
     print("Hello Kris")
