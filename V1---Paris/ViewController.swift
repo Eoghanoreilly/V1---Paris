@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         let validWorks = works.flatMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
         
-    
+    print("Hello Kris")
     }
     
     override func viewDidLoad() {
