@@ -31,11 +31,11 @@ class Artwork: NSObject, MKAnnotation {
     
     init?(json: [Any]) {
         self.title = json[1] as? String ?? "No Title"
-        self.locationName = json[3] as! String
-        self.discipline = json[4] as! String
+        self.locationName = json[2] as! String
+        self.discipline = json[3] as! String
         
-        if let latitude = Double(json[6] as! String),
-            let longitude = Double(json[7] as! String) {
+        if let latitude = Double(json[5] as! String),
+            let longitude = Double(json[6] as! String) {
             self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         } else {
             self.coordinate = CLLocationCoordinate2D()
