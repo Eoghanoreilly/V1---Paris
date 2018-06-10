@@ -4,9 +4,11 @@
             
             
             
-            [ 1,"Title: O'Reilly Residence","Subtitle: Eoghans House","House","Here blah blah...","54.193187","-8.446780",[ null,"54.193187","-8.446780",null,false ],null ]
-
-            
-            
+            [ 1,"Title: O'Reilly Residence","Subtitle: Eoghans House","House","Here blah blah...","54.193187","-8.446780",[ null,"54.193187","-8.446780",null,false ],null ],
+            [ 2,"Point Zero des routes de France","The dead center of Paris","Geography","Here blah blah...","48.853402","2.348791",[ null,"48.853402","2.348791",null,false ],null ],
+            [ 3,"Tour Saint-Jacques","The only remaining part of a 16th Century church that was destroyed during the french revolution","Historical","Here blah blah...","48.858039","2.348933",[ null,"48.858039","2.348933",null,false ],null ],
+            [ 4,"La Ballon Generali de Paris","Viewing Balloon","Vista","Here blah blah...","48.841351","2.273886",[ null,"48.841351","2.273886",null,false ],null ],
+            [ 5,"La Carreau du Temple","Marie Antoinette was beheaded here","Historical","Here blah blah...","48.864541","2.362236 ",[ null,"48.864541","2.362236 ",null,false ],null ],
+            [ 6,"Cathedral de Saint-Chappelle","This chapel is the royal chapel  of the Palais de la Cite. Which stood as the royal residence of the Kings of France until the 14th century. With the groundbreaking beginning in 1242 and completing in 1248.","Historical","Here blah blah...","48.855412","2.344989",[ null,"48.855412","2.344989",null,false ],null ]
  ]
 }
