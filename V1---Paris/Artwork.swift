@@ -30,12 +30,12 @@ class Artwork: NSObject, MKAnnotation {
     
     
     init?(json: [Any]) {
-        self.title = json[16] as? String ?? "No Title"
-        self.locationName = json[12] as! String
-        self.discipline = json[15] as! String
+        self.title = json[1] as? String ?? "No Title"
+        self.locationName = json[3] as! String
+        self.discipline = json[4] as! String
         
-        if let latitude = Double(json[18] as! String),
-            let longitude = Double(json[19] as! String) {
+        if let latitude = Double(json[6] as! String),
+            let longitude = Double(json[7] as! String) {
             self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         } else {
             self.coordinate = CLLocationCoordinate2D()
