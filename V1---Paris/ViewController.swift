@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         // and append the resulting validWorks to the artworks array. --------- NOT 1000% sure of the purpose
         let validWorks = works.flatMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
+        print("Hello World")
     
     }
     
