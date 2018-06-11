@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var artworks: [Artwork] = []
 
     func loadInitialData() {
-        // Here you are loading the PublicArt.json file into an DATA object
+        // Here you are loading the PublicArt.json file into a DATA object
         guard let fileName = Bundle.main.path(forResource: "PublicArt", ofType: "json")
             else { return }
         let optionalData = try? Data(contentsOf: URL(fileURLWithPath: fileName))
@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         let validWorks = works.compactMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
         
-    print("Hello Kris")
     }
     
     override func viewDidLoad() {
@@ -99,7 +98,7 @@ extension ViewController: MKMapViewDelegate {
         return view
     }
     
-    @IBAction func done() {
-        navigationController?.popViewController(animated:true) // close view go back
-    }
+    // @IBAction func done() {
+    //    navigationController?.popViewController(animated:true) // close view go back
+    // }
 }

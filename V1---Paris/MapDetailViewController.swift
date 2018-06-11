@@ -10,30 +10,38 @@ import UIKit
 
 class MapDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // Hook up UILabels
+    @IBOutlet weak var POITitle: UILabel!
+    @IBOutlet weak var POIInfo: UILabel!
+    
+    // Use these variables to store text to be placed in UILabels
+    let locationName: String
+    let locationInfo: String
+    
+    // Compiler told me to add this - don't know what it is/does
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
+    // Trying to import info from the json file, copying copde format from main VC
+    init?(json: [Any]) {
+        locationName = json[3] as! String
+        locationInfo = json[5] as! String
+        super.init()
+    }
+    
+    // Placing the text from json file into UILabels
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.POITitle.text = locationName
+        self.POIInfo.text = locationInfo
+
+    }
+    
+    // Boilerplate code
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var POITitle: UILabel!
-    @IBOutlet weak var POIInfo: UILabel!
-    
-    POITitle.text = "hello"
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

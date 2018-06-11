@@ -62,13 +62,13 @@
 			children = (
 				44919F9F20CB209500621FD8 /* AppDelegate.swift */,
 				44919FA120CB209500621FD8 /* ViewController.swift */,
+				01D57EAC20CDD73F00DAA0BB /* MapDetailViewController.swift */,
 				44F77EB620CB33C900D471F9 /* Artwork.swift */,
 				44919FA320CB209500621FD8 /* Main.storyboard */,
 				44919FA620CB209600621FD8 /* Assets.xcassets */,
 				44919FA820CB209600621FD8 /* LaunchScreen.storyboard */,
 				44F77EBA20CC595000D471F9 /* PublicArt.json */,
 				44919FAB20CB209600621FD8 /* Info.plist */,
-				01D57EAC20CDD73F00DAA0BB /* MapDetailViewController.swift */,
 			);
 			path = "V1---Paris";
 			sourceTree = "<group>";
