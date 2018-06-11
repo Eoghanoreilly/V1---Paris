@@ -77,8 +77,12 @@ class ViewController: UIViewController {
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
-    
 }
+
+
+
+
+
 
 // Map view delegate which handles the annotation view
 extension ViewController: MKMapViewDelegate {
@@ -93,10 +97,23 @@ extension ViewController: MKMapViewDelegate {
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            // Broke up the button initialisation so that it has unique id 'button'
+            let button = UIButton(type: .detailDisclosure)
+            view.rightCalloutAccessoryView = button
+            // Make the segue happen - tried to make it happen when object 'button' is pressed
+            performSegue(withIdentifier: "MapDetail", sender: button)
+        
         }
+        
         return view
     }
+    
+    /* Prepare for the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MapDetail" {
+            _ = segue.destination as! MapDetailViewController
+        }
+    } */
     
     // @IBAction func done() {
     //    navigationController?.popViewController(animated:true) // close view go back
