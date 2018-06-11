@@ -1,4 +1,5 @@
 //https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
+//https://www.youtube.com/watch?v=ce85SCtpsTw GPS
 //  ViewController.swift
 //  V1---Paris
 //
@@ -8,11 +9,16 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
+    
+    
     
     var artworks: [Artwork] = []
 
@@ -44,6 +50,10 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         super.viewDidLoad()
         //set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 54.194479, longitude: -8.448119)
@@ -61,11 +71,11 @@ class ViewController: UIViewController {
         mapView.addAnnotations(artworks)
         }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    
+    
+    
+    
     
     
     //This tells the app how much of the map to show once it hones in on the initial location above
@@ -79,7 +89,17 @@ class ViewController: UIViewController {
     }
     
     
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        let center = location.coordinate
+        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let region  = MKCoordinateRegion(center: center, span: span)
+        
+        mapView.setRegion(region, animated: true)
+        mapView.showsUserLocation = true
+    }
 
 
 }
