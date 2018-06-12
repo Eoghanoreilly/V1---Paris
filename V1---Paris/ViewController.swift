@@ -1,27 +1,20 @@
 //https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
-//https://www.youtube.com/watch?v=ce85SCtpsTw GPS
 //  ViewController.swift
 //  V1---Paris
 //
 //  Created by Eoghan on 2018-06-08.
 //  Copyright © 2018 Vestego. All rights reserved.
 // New comment from Kris added at 12:43 Dublin
-
 import UIKit
 import MapKit
-import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-
+class ViewController: UIViewController {
+    
     
     @IBOutlet weak var mapView: MKMapView!
     
-    let locationManager = CLLocationManager()
-    
-    
-    
     var artworks: [Artwork] = []
-
+    
     func loadInitialData() {
         // Here you are loading the PublicArt.json file into an DATA object
         guard let fileName = Bundle.main.path(forResource: "PublicArt", ofType: "json")
@@ -29,16 +22,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let optionalData = try? Data(contentsOf: URL(fileURLWithPath: fileName))
         
         guard
-        let data = optionalData,
-        
-        // Here you are using the JSonSerialization to obtain the JSON object
-        let json = try? JSONSerialization.jsonObject(with: data),
-        
-        // Here you are checking to make sure the JSON data format is a dictionary with 'String' keys and 'ANY' values
-        let dictionary = json as? [String: Any],
-        
-        // Here you tell the compiler you only care about data sets in the JSON file whos key is "DATA"
-        let works = dictionary["data"] as? [[Any]]
+            let data = optionalData,
+            
+            // Here you are using the JSonSerialization to obtain the JSON object
+            let json = try? JSONSerialization.jsonObject(with: data),
+            
+            // Here you are checking to make sure the JSON data format is a dictionary with 'String' keys and 'ANY' values
+            let dictionary = json as? [String: Any],
+            
+            // Here you tell the compiler you only care about data sets in the JSON file whos key is "DATA"
+            let works = dictionary["data"] as? [[Any]]
             else { return }
         
         // Here you  flatmap this array of arrays, using the failable initializer that you just added to the Artwork class,
@@ -46,14 +39,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let validWorks = works.compactMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
         
-    print("Hello Kris")
+        print("Hello Kris")
     }
     
     override func viewDidLoad() {
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        
         super.viewDidLoad()
         //set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 54.194479, longitude: -8.448119)
@@ -63,18 +52,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         mapView.delegate = self
         
-// The below hard codes a map point in the system. We don't want this (As it's not scalable or energy efficient) so we read from the JSON file instead
-// let artwork = Artwork(title: "O'Reilly Residence", locationName: "Ballygawley, Co. Sligo", discipline: "House", coordinate: CLLocationCoordinate2D(latitude: 54.194479, longitude: -8.448119))
-// mapView.addAnnotation(artwork)
+        // The below hard codes a map point in the system. We don't want this (As it's not scalable or energy efficient) so we read from the JSON file instead
+        // let artwork = Artwork(title: "O'Reilly Residence", locationName: "Ballygawley, Co. Sligo", discipline: "House", coordinate: CLLocationCoordinate2D(latitude: 54.194479, longitude: -8.448119))
+        // mapView.addAnnotation(artwork)
         
         loadInitialData()
         mapView.addAnnotations(artworks)
-        }
-
-
+    }
     
-    
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     
     
@@ -89,19 +78,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let location = locations[0]
-        
-        let center = location.coordinate
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region  = MKCoordinateRegion(center: center, span: span)
-        
-        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
-    }
-
-
+    
+    
+    
 }
 
 
@@ -120,5 +99,5 @@ extension ViewController: MKMapViewDelegate {
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
-    }
+}
 }
