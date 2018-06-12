@@ -81,7 +81,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // CLLocationDistance = 1000 -- // the 1000 means you span 1000 meters squared from the initial location set
     let regionRadius: CLLocationDistance = 2000
     func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         
         //all this does is, when the app opens it'll zoom to your desired distance with a nice animation
         mapView.setRegion(coordinateRegion, animated: true)
@@ -98,6 +98,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
+        locationManager.startMonitoringSignificantLocationChanges()
+        print("Stopped Updating")
     }
     
     
