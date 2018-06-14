@@ -1,4 +1,4 @@
-//https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
+
 //  AppDelegate.swift
 //  V1---Paris
 //

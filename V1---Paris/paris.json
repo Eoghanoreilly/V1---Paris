@@ -1,9 +1,5 @@
 {
-  
   "data" : [
-            
-            
-            
             [ 1,"Title: O'Reilly Residence","Subtitle: Eoghans House","House","Here blah blah...","54.193187","-8.446780",[ null,"54.193187","-8.446780",null,false ],null ],
             [ 2,"Point Zero des routes de France","The dead center of Paris","Geography","Here blah blah...","48.853402","2.348791",[ null,"48.853402","2.348791",null,false ],null ],
             [ 3,"Tour Saint-Jacques","The only remaining part of a 16th Century church that was destroyed during the french revolution","Historical","Here blah blah...","48.858039","2.348933",[ null,"48.858039","2.348933",null,false ],null ],

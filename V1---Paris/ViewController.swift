@@ -1,5 +1,4 @@
-//https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
-//https://www.youtube.com/watch?v=ce85SCtpsTw GPS
+
 //  ViewController.swift
 //  V1---Paris
 //
@@ -22,8 +21,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var artworks: [Artwork] = []
     
     func loadInitialData() {
-        // Here you are loading the PublicArt.json file into an DATA object
-        guard let fileName = Bundle.main.path(forResource: "PublicArt", ofType: "json")
+        // loading JSON into an DATA object
+        guard let fileName = Bundle.main.path(forResource: "paris", ofType: "json")
             else { return }
         let optionalData = try? Data(contentsOf: URL(fileURLWithPath: fileName))
         
@@ -40,12 +39,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let works = dictionary["data"] as? [[Any]]
             else { return }
         
-        // Here you  flatmap this array of arrays, using the failable initializer that you just added to the Artwork class,
-        // and append the resulting validWorks to the artworks array. --------- NOT 1000% sure of the purpose
         let validWorks = works.compactMap { Artwork(json: $0) }
         artworks.append(contentsOf: validWorks)
-        
-        print("Hello Kris")
     }
     
     override func viewDidLoad() {
@@ -54,31 +49,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         
         super.viewDidLoad()
-        //set initial location in Honolulu
         let initialLocation = CLLocation(latitude: 54.194479, longitude: -8.448119)
-        
-        //this tells the app to zoom to the initial location when starting the app
         centerMapOnLocation(location: initialLocation)
         
         mapView.delegate = self
-        
-        // The below hard codes a map point in the system. We don't want this (As it's not scalable or energy efficient) so we read from the JSON file instead
-        // let artwork = Artwork(title: "O'Reilly Residence", locationName: "Ballygawley, Co. Sligo", discipline: "House", coordinate: CLLocationCoordinate2D(latitude: 54.194479, longitude: -8.448119))
-        // mapView.addAnnotation(artwork)
-        
         loadInitialData()
         mapView.addAnnotations(artworks)
     }
     
-    
-    
-    
-    
-    
-    
-    
-    //This tells the app how much of the map to show once it hones in on the initial location above
-    // CLLocationDistance = 1000 -- // the 1000 means you span 1000 meters squared from the initial location set
     let regionRadius: CLLocationDistance = 2000
     func centerMapOnLocation(location: CLLocation) {
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)

@@ -10,10 +10,7 @@ import Foundation
 import MapKit
 
 class Artwork: NSObject, MKAnnotation {
-    
-    //some notes on the information below
-    //the annotation protocol requires a location - this just makes sense
-    //I have added a title and subtitle, which will display when the user taps the anotation pin
+
     let title: String?
     let locationName: String
     let discipline: String

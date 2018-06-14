@@ -13,7 +13,7 @@
 		44919FA720CB209600621FD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44919FA620CB209600621FD8 /* Assets.xcassets */; };
 		44919FAA20CB209600621FD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44919FA820CB209600621FD8 /* LaunchScreen.storyboard */; };
 		44F77EB720CB33C900D471F9 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F77EB620CB33C900D471F9 /* Artwork.swift */; };
-		44F77EBB20CC595000D471F9 /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F77EBA20CC595000D471F9 /* PublicArt.json */; };
+		44F77EBB20CC595000D471F9 /* paris.json in Resources */ = {isa = PBXBuildFile; fileRef = 44F77EBA20CC595000D471F9 /* paris.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		44919FA920CB209600621FD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44919FAB20CB209600621FD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44F77EB620CB33C900D471F9 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
-		44F77EBA20CC595000D471F9 /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PublicArt.json; sourceTree = "<group>"; };
+		44F77EBA20CC595000D471F9 /* paris.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = paris.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				44919FA320CB209500621FD8 /* Main.storyboard */,
 				44919FA620CB209600621FD8 /* Assets.xcassets */,
 				44919FA820CB209600621FD8 /* LaunchScreen.storyboard */,
-				44F77EBA20CC595000D471F9 /* PublicArt.json */,
+				44F77EBA20CC595000D471F9 /* paris.json */,
 				44919FAB20CB209600621FD8 /* Info.plist */,
 			);
 			path = "V1---Paris";
@@ -128,7 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44F77EBB20CC595000D471F9 /* PublicArt.json in Resources */,
+				44F77EBB20CC595000D471F9 /* paris.json in Resources */,
 				44919FAA20CB209600621FD8 /* LaunchScreen.storyboard in Resources */,
 				44919FA720CB209600621FD8 /* Assets.xcassets in Resources */,
 				44919FA520CB209500621FD8 /* Main.storyboard in Resources */,
