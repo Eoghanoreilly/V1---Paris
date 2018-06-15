@@ -43,4 +43,20 @@ class Artwork: NSObject, MKAnnotation {
     var subtitle: String? {
         return locationName
     }
+    
+    // markerTintColor for disciplines: Sculpture, Plaque, Mural, Monument, other
+    var markerTintColor: UIColor  {
+        switch discipline {
+        case "Monument":
+            return .red
+        case "Mural":
+            return .cyan
+        case "Plaque":
+            return .blue
+        case "Sculpture":
+            return .purple
+        default:
+            return .green
+        }
+    }
 }

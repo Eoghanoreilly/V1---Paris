@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445A7C4B20D42DE700C7BFFA /* ArtworkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445A7C4A20D42DE700C7BFFA /* ArtworkViews.swift */; };
 		44919FA020CB209500621FD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44919F9F20CB209500621FD8 /* AppDelegate.swift */; };
 		44919FA220CB209500621FD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44919FA120CB209500621FD8 /* ViewController.swift */; };
 		44919FA520CB209500621FD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44919FA320CB209500621FD8 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		445A7C4A20D42DE700C7BFFA /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
 		44919F9C20CB209500621FD8 /* V1---Paris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "V1---Paris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44919F9F20CB209500621FD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44919FA120CB209500621FD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				44919F9F20CB209500621FD8 /* AppDelegate.swift */,
 				44919FA120CB209500621FD8 /* ViewController.swift */,
+				445A7C4A20D42DE700C7BFFA /* ArtworkViews.swift */,
 				44F77EB620CB33C900D471F9 /* Artwork.swift */,
 				44919FA320CB209500621FD8 /* Main.storyboard */,
 				44919FA620CB209600621FD8 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44919FA220CB209500621FD8 /* ViewController.swift in Sources */,
+				445A7C4B20D42DE700C7BFFA /* ArtworkViews.swift in Sources */,
 				44F77EB720CB33C900D471F9 /* Artwork.swift in Sources */,
 				44919FA020CB209500621FD8 /* AppDelegate.swift in Sources */,
 			);
