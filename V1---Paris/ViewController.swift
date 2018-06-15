@@ -56,6 +56,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         mapView.addAnnotations(artworks)
     }
     
+    
     let regionRadius: CLLocationDistance = 2000
     func centerMapOnLocation(location: CLLocation) {
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
