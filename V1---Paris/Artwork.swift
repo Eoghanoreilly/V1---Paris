@@ -63,7 +63,12 @@ class Artwork: NSObject, MKAnnotation {
     }
     
     var imageName: String? {
-        if discipline == "Sculpture" { return "Sculpture" }
+        if discipline == "Sculpture" { return "Sculpture"
+        } else if discipline == "Cathedral" { return "Cathedral"
+        } else if discipline == "War" { return "War"
+        } else if discipline == "Castle" { return "Castle"
+        } else if discipline == "Other" { return "Other"
+        }
         return "Flag"
     }
 }
