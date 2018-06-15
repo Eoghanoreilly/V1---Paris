@@ -18,7 +18,13 @@ class ArtworkMarkerView: MKMarkerAnnotationView {
             rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             // 2
             markerTintColor = artwork.markerTintColor
-            glyphText = String(artwork.discipline.first!)
+//            glyphText = String(artwork.discipline.first!)
+            
+            if let imageName = artwork.imageName {
+                glyphImage = UIImage(named: imageName)
+            } else {
+                glyphImage = nil
+            }
         }
     }
 }
