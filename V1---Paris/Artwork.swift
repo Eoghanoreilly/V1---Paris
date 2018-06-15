@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import Contacts
 
 class Artwork: NSObject, MKAnnotation {
 
@@ -43,6 +44,16 @@ class Artwork: NSObject, MKAnnotation {
     var subtitle: String? {
         return locationName
     }
+    
+    // Linking up with maps app somehow
+    func mapItem() -> MKMapItem {
+        let addressDict = [CNPostalAddressStreetKey: subtitle!]
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = title
+        return mapItem
+    }
+
     
     // markerTintColor for disciplines: Sculpture, Plaque, Mural, Monument, other
     var markerTintColor: UIColor  {
