@@ -77,7 +77,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
-        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.startUpdatingLocation()
         print("Stopped Updating")
     }
     

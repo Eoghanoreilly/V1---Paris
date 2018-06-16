@@ -61,7 +61,7 @@ class Artwork: NSObject, MKAnnotation {
         case "Sculpture":
             return .red
         case "Cathedral":
-            return .cyan
+            return .orange
         case "War":
             return .blue
         case "Other":
