@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" zoomEnabled="NO" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-hv-BpX">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="mutedStandard" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ge-hv-BpX">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <viewLayoutGuide key="safeArea" id="HaA-q7-pzj"/>
@@ -36,7 +36,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Vestego" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="yso-Nc-dRc"/>
+                    <navigationItem key="navigationItem" title="Vestego" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="yso-Nc-dRc">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gsN-Yz-7Fa"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="5ge-hv-BpX" id="efa-5Z-ORM"/>
                         <segue destination="3Ky-DP-2iw" kind="show" identifier="MapDetail" id="G6k-6p-p0M"/>
@@ -49,7 +51,7 @@
         <!--Map Detail View Controller-->
         <scene sceneID="Swb-nC-bpz">
             <objects>
-                <viewController id="3Ky-DP-2iw" customClass="MapDetailViewController" sceneMemberID="viewController">
+                <viewController id="3Ky-DP-2iw" customClass="MapDetailViewController" customModule="V1___Paris" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5m-DD-ZvD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -44,10 +44,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //locationManager.requestLocation()
         
         super.viewDidLoad()
-        let initialLocation = CLLocation(latitude: 54.194479, longitude: -8.448119)
+        let initialLocation = CLLocation(latitude: 48.853321, longitude: 2.357941)
         centerMapOnLocation(location: initialLocation)
         
         mapView.delegate = self
@@ -57,7 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    let regionRadius: CLLocationDistance = 2000
+    let regionRadius: CLLocationDistance = 750
     func centerMapOnLocation(location: CLLocation) {
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         
